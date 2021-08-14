@@ -13,20 +13,20 @@
 
     <main class="form-signin">
 
-        <form id="formEnter" action="{{ route('super.enter') }}" method="POST">
+        <form id="formSignIn" action="{{ route('super.enter') }}" method="POST">
             @csrf
 
-            <img class="mb-4" src="{{ asset('images/brand/bootstrap-logo.svg') }}" alt="" width="72" height="57">
+            <img class="mb-3" src="{{ asset('images/brand/bootstrap-logo.svg') }}" alt="" width="72" height="57">
 
-            <div class="form-floating">
-                <input type="email" name="text" class="form-control" id="email" placeholder="seuemail@exemplo.com" required>
+            <div class="form-floating mb-1">
+                <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@exemplo.com" required>
                 <label for="email">Email</label>
             </div>
             <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                 <label for="password">Senha</label>
             </div>
-            <div class="checkbox mb-3">
+            <div class="checkbox mt-3 mb-3">
                 <label>
                     <input type="checkbox" name="remember" value="remember"> Lembrar de mim
                 </label>

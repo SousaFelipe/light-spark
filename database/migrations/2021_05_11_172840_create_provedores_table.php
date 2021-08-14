@@ -38,6 +38,8 @@ class CreateProvedoresTable extends Migration
             $table->string('titular_contato', 11);
             $table->string('class_responsavel', 96);
 
+            $table->enum('ativo', ['S', 'N']);
+
             $table->string('ixc_token', 66);
         });
     }

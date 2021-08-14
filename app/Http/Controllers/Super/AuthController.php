@@ -39,12 +39,12 @@ class AuthController extends Controller
             if (Auth::attempt($credentials, $request->has('remember'))) {
                 $auth = true;
             }
-    
+
             if ($request->ajax()) {
                 return response()->json([
                     'auth' => $auth,
                     'intended' => $intended,
-                    'errors' => $auth ? [] : [__('auth.password')]
+                    'errors' => $auth ? [] : ['password' => __('auth.password')]
                 ]);
             }
             else if ($auth) {
@@ -54,7 +54,7 @@ class AuthController extends Controller
         else return response()->json([
             'auth' => false,
             'intended' => $intended,
-            'errors' => [__('auth.email')]
+            'errors' => ['email' => __('auth.email')]
         ]);
 
         return redirect()->route('super.login');

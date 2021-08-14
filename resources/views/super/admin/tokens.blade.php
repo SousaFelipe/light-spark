@@ -8,6 +8,10 @@
 
 @section('tokens', 'active')
 
+@section('page-title')
+    <i class="fas fa-key me-2"></i> <span class="text-dark fs-5">Tokens</span>
+@endsection
+
 
 @section('main-content')
 

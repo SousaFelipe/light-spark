@@ -5,9 +5,15 @@ class Table {
 
 
     constructor(id) {
+
         this.table = document.getElementById(id)
         this.thead = $(`#${ id } > thead > tr`)
         this.tbody = $(`#${ id } > tbody`)
+
+        this.data = {
+            fields: [],
+            values: []
+        }
     }
 
 
@@ -23,7 +29,17 @@ class Table {
     }
 
 
-    body(data) {
+    fields(fields = []) {
+        this.data.fields = fields
+    }
+
+
+    data(data) {
+        this.data.values = data
+    }
+
+
+    render() {
 
     }
 }

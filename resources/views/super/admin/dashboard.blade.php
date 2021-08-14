@@ -7,7 +7,10 @@
 
 
 @section('dashboard', 'active')
-@section('page-title', 'Dashboard')
+
+@section('page-title')
+    <i class="fas fa-tachometer-alt me-2"></i> <span class="text-dark fs-5">Dashboard</span>
+@endsection
 
 
 @section('main-content')
@@ -17,5 +20,5 @@
 
 
 @section('page-scripts')
-    
+
 @endsection

@@ -4,7 +4,7 @@
     @section('title', Auth::user()->firstAndLastName())
 
     @include('includes.head')
-    
+
     <body class="text-center" aria-live="polite" aria-atomic="true">
 
         @include('includes.toast')
@@ -47,27 +47,29 @@
                     </li>
                 </ul>
                 <hr>
-                <div class="d-flex justify-content-between align-items-center">
-                    
+                <div class="d-flex justify-content-center align-items-center text-center">
+                    <span class="text-muted">&copy; Darth.io - Ago 2021</span>
                 </div>
             </div>
 
             <div class="d-flex flex-column flex-grow-1">
 
-                <header class="navbar border-bottom container-fluid">
-                    <span class="navbar-brand">
-                        <h4 class="text-dark">@yield('page-title', Auth::user()->firstName())</h4>
-                    </span>
+                <header class="navbar border-bottom container-fluid align-items-center">
+                    <div class="navbar-brand d-flex align-items-center">@yield('page-title')</div>
                     <nav class="navbar-nav">
                         <div class="nav-item text-nowrap">
-                            <button class="btn btn-outline-light text-primary" onclick="app.submitForm('formSignOut')">
+                            <button class="btn btn-outline-light text-primary" onclick="app.form('formSignOut').submit()">
                                 Sair
                                 <i class="fas fa-sign-out-alt"></i>
                             </button>
                         </div>
                     </nav>
                 </header>
-                
+
+                <main class="container w-100 h-100">
+                    @yield('main-content')
+                </main>
+
             </div>
 
         </div>

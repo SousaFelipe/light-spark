@@ -34,10 +34,17 @@ let getValidated = function (email, password) {
 
 let handleAuthentication = function (response, target) {
     if (response.auth === true) {
-        document.getElementById('formEnter').submit()
+        app.form('formSignIn').submit()
     }
     else {
-        toast.display(response.errors[0])
+        if (response.errors.email) {
+            app.input('email').invalidate()
+            toast.display(response.errors.email)
+        }
+        else if (response.errors.password) {
+            app.input('password').invalidate()
+            toast.display(response.errors.password)
+        }
         target.removeAttribute('disabled')
     }
 }
