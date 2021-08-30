@@ -2,14 +2,14 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
     @include('includes.head')
-    
-    <body class="text-center" aria-live="polite" aria-atomic="true">
+
+    <body>
 
         @include('includes.toast')
 
-        @yield('main-content')
 
-        <form id="formLogout" action="{{ route('super.logout') }}" method="POST">
+
+        <form id="formLogout" class="align-self-center" action="{{ route('super.logout') }}" method="POST">
             @csrf
         </form>
 

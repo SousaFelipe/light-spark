@@ -1,13 +1,25 @@
-@import url('../vendor/bootstrap/css/bootstrap.min.css');
-@import url('../vendor/fontawesome/css/all.min.css');
+@import url('../vendor/bootstrap/css/bootstrap-grid.min.css');
+@import url('./globals.css');
+@import url('./dimensions.css');
+@import url('./components.css');
 
 
-body {
+* {
     box-sizing: border-box;
-    width:      100vw;
-    height:     100vh;
-    margin:     0;
     padding:    0;
+}
+
+
+html,
+body {
+    width:       100vw;
+    height:      100vh;
+    top:         0;
+    bottom:      0;
+    margin:      0;
+    padding:     0;
+    font-family: 'Work Sans';
+    font-weight: 400;
 }
 
 

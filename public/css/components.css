@@ -1,0 +1,22 @@
+
+
+
+.toast-container {
+    display:            flex;
+    width:              100%;
+    position:           absolute;
+    justify-content:    center;
+}
+
+.toast {
+    display:            flex;
+    flex-direction:     row;
+    justify-content:    flex-start;
+    padding:            var(--px14);
+    border-radius:      var(--px8);
+}
+
+
+.btn-close {
+    margin-left: var(--px8);
+}
