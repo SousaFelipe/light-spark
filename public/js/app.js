@@ -1,6 +1,12 @@
 
 
 
+$(function () {
+    icons.render()
+})
+
+
+
 const app = {
 
 

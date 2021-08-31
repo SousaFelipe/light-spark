@@ -1,6 +1,49 @@
 
 
 
+
+
+.btn-close {
+    display:        block;
+    margin-left:    var(--px8);
+    padding:        var(--px4);
+    border:         none;
+    border-radius:  var(--px4);
+    background:     transparent;
+    cursor:         pointer;
+}
+
+.btn-close > span {
+    fill: white;
+}
+
+.btn-close:hover {
+    transition:         background-color 250ms ease-in;
+    background-color:   rgba(255, 255, 255, 0.15);
+}
+
+
+
+
+
+span[class*="icon-"] {
+    display: block;
+}
+
+.icon-sm {
+    width:  var(--px14);
+    height: var(--px14);
+}
+
+.icon-md {
+    width:  var(--px24);
+    height: var(--px24);
+}
+
+
+
+
+
 .toast-container {
     display:            flex;
     width:              100%;
@@ -9,14 +52,11 @@
 }
 
 .toast {
-    display:            flex;
+    display:            none;
     flex-direction:     row;
     justify-content:    flex-start;
+    align-items:        center;
     padding:            var(--px14);
     border-radius:      var(--px8);
-}
-
-
-.btn-close {
-    margin-left: var(--px8);
+    opacity:            0;
 }

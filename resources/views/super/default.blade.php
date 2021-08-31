@@ -7,7 +7,7 @@
 
         @include('includes.toast')
 
-
+        @yield('content')
 
         <form id="formLogout" class="align-self-center" action="{{ route('super.logout') }}" method="POST">
             @csrf

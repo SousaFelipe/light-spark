@@ -3,6 +3,8 @@
         <div id="toastMsgBody" class="toast-body text-white">
             Este e-mail não consta nos nossos registros
         </div>
-        <button class="btn-close"></button>
+        <button class="btn-close" data-spark-close="toastMsg">
+            <span class="icon-md icn-close"></span>
+        </button>
     </div>
 </div>
