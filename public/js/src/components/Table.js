@@ -4,42 +4,58 @@
 class Table {
 
 
-    constructor(id) {
+    constructor (id, settings = { }) {
 
         this.table = document.getElementById(id)
-        this.thead = $(`#${ id } > thead > tr`)
+        this.thead = $(`#${ id } > thead`)
         this.tbody = $(`#${ id } > tbody`)
 
-        this.data = {
-            fields: [],
-            values: []
-        }
+        this.settings = settings
+        this.titles = []
+        this.rows = []
     }
 
 
-    head(titles = []) {
+    classes (index = false) {
 
+        let classes = this.settings.rows.cells.classes
+        let inlines = classes.join(' ')
+
+        return (classes.length > 0)
+            ? (index !== false)
+                ? `class="${ inlines } w-${ this.settings.cols[index] }"`
+                : `class="${ inlines }"`
+            : ``
+    }
+
+
+    addRow (rowData) {
         let innerHTML = ``
 
-        titles.forEach(title => {
-            innerHTML += `<th> ${ title } </th>`
+        rowData.forEach((data, index) => {
+            innerHTML += `<td ${ this.classes(index) }>${ data }</td>`
         })
 
-        this.thead.append(innerHTML)
+        this.rows.push(`<tr>${ innerHTML }</tr>`)
     }
 
 
-    fields(fields = []) {
-        this.data.fields = fields
+    renderHeader () {
+        let innerHTML = ``
+
+        this.settings.titles.forEach((title, index) => {
+            innerHTML += `<th ${ this.classes(index) }> ${ title } </th>`
+        })
+
+        this.thead.append(`<tr>${ innerHTML }</tr>`)
     }
 
 
-    data(data) {
-        this.data.values = data
-    }
+    render () {
+        this.renderHeader()
 
-
-    render() {
-
+        for (let i = 0; i < this.rows.length; i++) {
+            this.tbody.append(this.rows[i])
+        }
     }
 }

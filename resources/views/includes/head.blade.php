@@ -13,5 +13,6 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     @yield('head-styles')
+    @yield('layout-styles')
 
 </head>

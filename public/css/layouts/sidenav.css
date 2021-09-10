@@ -1,0 +1,98 @@
+
+
+
+.main-container {
+    position:       relative;
+    height:         100%;
+    padding-top:    var(--px30);
+    top:            0;
+    bottom:         0;
+}
+
+
+
+
+
+.main-content {
+    display:        flex;
+    flex:           1;
+    padding-left:   var(--px20);
+}
+
+
+
+
+
+.sidenav {
+    position:           relative;
+    display:            flex;
+    flex-direction:     row;
+    justify-content:    stretch;
+    align-items:        flex-start;
+    width:              13.75em;
+    min-width:          13.75em;
+    max-width:          13.75em;
+    height:             fit-content;
+    padding:            0;
+}
+
+.sidenav > ul {
+    flex-direction: column;
+    width:          100%;
+    margin:         0;
+    top:            0;
+}
+
+.nav-item {
+    padding-left:   var(--px14);
+    padding-top:    var(--px8);
+    padding-bottom: var(--px8);
+    border-radius:  var(--px4);
+    margin-bottom:  var(--px4);
+    color:          var(--text-primary);
+    font-size:      var(--px14);
+    font-weight:    500;
+    cursor:         pointer;
+}
+
+.nav-item:not(.active):hover {
+    transition:         background-color 50ms ease-in;
+    background-color:   var(--bg-light);
+}
+
+.nav-item-icon {
+    margin-right:   var(--px14);
+    color:          var(--bg-quaternary);
+    fill:           var(--bg-quaternary);
+}
+
+.nav-item.active {
+    background-color:   var(--accent-400);
+    text-shadow:        1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.nav-item.active,
+.nav-item.active > a > .nav-item-icon {
+    color:  white;
+    fill:   white;
+}
+
+
+
+
+
+@media screen and (max-width: 1023.98px) {
+    .main-container {
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (min-width: 1024px) {
+    .main-container {
+        width:      1000px;
+        min-width:  1000px;
+        max-width:  1000px;
+    }
+}

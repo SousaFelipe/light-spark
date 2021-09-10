@@ -1,11 +1,11 @@
 
 
 
-const toast = new Toast('toastMsg')
+const toast = new Toast('toastMsg', 5)
 
 
 
-let doEnter = function (target) {
+let login = function (target) {
 
     const credentials = getValidated(
         document.getElementById('email').value,
@@ -13,7 +13,7 @@ let doEnter = function (target) {
     )
 
     if (credentials) {
-        target.setAttribute('disabled', true)
+        app.button('btnEnter').setLoding(true)
         new Request('enter', credentials).post(response => handleAuthentication(response, target))
     }
     else {
@@ -37,14 +37,17 @@ let handleAuthentication = function (response, target) {
         app.form('formSignIn').submit()
     }
     else {
+
         if (response.errors.email) {
-            app.input('email').invalidate()
+            app.input('input-email').invalidate()
             toast.display(response.errors.email)
         }
         else if (response.errors.password) {
-            app.input('password').invalidate()
+            app.input('input-password').invalidate()
             toast.display(response.errors.password)
         }
+
         target.removeAttribute('disabled')
+        app.button('btnEnter').setLoding(false)
     }
 }

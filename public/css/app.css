@@ -4,28 +4,94 @@
 @import url('./components.css');
 
 
+
 * {
     box-sizing: border-box;
+    margin:     0;
     padding:    0;
 }
 
 
+
 html,
 body {
-    width:       100vw;
-    height:      100vh;
-    top:         0;
-    bottom:      0;
-    margin:      0;
-    padding:     0;
-    font-family: 'Work Sans';
-    font-weight: 400;
+    width:              100vw;
+    height:             100vh;
+    top:                0;
+    bottom:             0;
+    margin:             0;
+    padding:            0;
+    background-color:   var(--bg-secondary);
+    font-family:        'Work Sans';
+    font-weight:        400;
+    color:              var(--text-primary);
 }
 
+
+
+input {
+    color:              var(--text-secondary);
+    background-color:   white;
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
+    transition:         background-color 7200s ease-in-out 0s;
+}
+
+::placeholder {
+    color:      var(--text-muted);
+    opacity:    1;
+}
+
+:-ms-input-placeholder {
+    color:      var(--text-muted);
+    opacity:    1;
+}
+
+::-ms-input-placeholder {
+    color:      var(--text-muted);
+    opacity:    1;
+}
+
+
+
+a {
+    text-decoration:    none;
+    color:              inherit;
+}
+
+
+
+ul,
+li,
+li > a {
+    display:        flex;
+    flex-direction: row;
+    align-items:    center;
+    width:          100%;
+    list-style:     none;
+}
+
+
+
+table {
+    caption-side:       bottom;
+    border-collapse:    collapse;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+    white-space:    nowrap;
+    overflow:       hidden;
+    text-overflow:  ellipsis;
+    border-color:   inherit;
+    border-style:   solid;
+    border-width:   0;
 }

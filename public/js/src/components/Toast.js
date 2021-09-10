@@ -4,8 +4,9 @@
 class Toast {
 
 
-    constructor (id) {
+    constructor (id, timeout = 0) {
 
+        this.timeout = timeout
         this.toast = document.getElementById(id)
         this.toastBody = document.getElementById(`${ id }Body`)
 
@@ -23,6 +24,7 @@ class Toast {
     }
 
 
+
     changeState (type = 'in') {
         let toast = this.toast
         let op = (type === 'out') ? 1.0 : 0.1
@@ -36,8 +38,8 @@ class Toast {
             if (type == 'out') {
                 if (op <= 0) {
                     clearInterval(timer)
+                    toast.style.display = 'none'
                 }
-                toast.style.display = 'none'
             }
             else if (op >= 1) {
                 clearInterval(timer)
@@ -46,8 +48,8 @@ class Toast {
             toast.style.opacity = op
             toast.style.filter = ('alpha(opacity=' + op * 100 + ")")
 
-            if (type == 'out') op -= op * 0.1
-            else op += op * 0.1
+            if (type == 'out') op -= (op * 0.1)
+            else op += (op * 0.1)
 
         }, 10)
     }

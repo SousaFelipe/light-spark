@@ -3,74 +3,48 @@
 
     @section('title', Auth::user()->firstAndLastName())
 
+    @section('head-styles')
+        <link rel="stylesheet" href="{{ asset('css/layouts/sidenav.css') }}">
+    @endsection
+
     @include('includes.head')
 
-    <body class="text-center" aria-live="polite" aria-atomic="true">
+    <body class="text-center">
 
         @include('includes.toast')
 
-        <div class="d-flex flex-row w-100 h-100">
+        <div class="flex-col align-center w-100 h-100">
 
-            <div class="d-flex flex-column flex-shrink-0 bg-light border-end h-100 p-3" style="width: 220px;">
-                <div class="d-flex flex-column align-items-center mb-3 link-dark text-decoration-none">
-                    <div class="row flex-column align-items-center mb-2">
-                        <img src="{{ asset(Auth::user()->avatar()) }}" alt="{{ Auth::user()->firstName() }}" class="rounded-circle">
-                    </div>
-                    <span class="fs-4">{{ Auth::user()->firstAndLastName() }}</span>
-                    <span class="text-default fs-6"><small>{{ Auth::user()->email() }}</small></span>
-                </div>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto text-start">
-                    <li class="nav-item">
-                        <a href="{{ route('super.admin.dashboard') }}" class="nav-link @yield('dashboard', '')">
-                            <i class="fas fa-tachometer-alt me-2"></i>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('super.admin.provedores') }}" class="nav-link @yield('provedores', '')">
-                            <i class="fas fa-satellite-dish me-2"></i>
-                            Provedores
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('super.admin.tokens') }}" class="nav-link @yield('tokens', '')">
-                            <i class="fas fa-key me-2"></i>
-                            Tokens
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('super.admin.produtos') }}" class="nav-link @yield('produtos', '')">
-                            <i class="fas fa-cubes me-2"></i>
-                            Produtos
-                        </a>
-                    </li>
-                </ul>
-                <hr>
-                <div class="d-flex justify-content-center align-items-center text-center">
-                    <span class="text-muted">&copy; Darth.io - Ago 2021</span>
-                </div>
-            </div>
+            <header class="navbar bg-brand-4 border-bottom">
 
-            <div class="d-flex flex-column flex-grow-1">
+            </header>
 
-                <header class="navbar border-bottom container-fluid align-items-center">
-                    <div class="navbar-brand d-flex align-items-center">@yield('page-title')</div>
-                    <nav class="navbar-nav">
-                        <div class="nav-item text-nowrap">
-                            <button class="btn btn-outline-light text-primary" onclick="app.form('formSignOut').submit()">
-                                Sair
-                                <i class="fas fa-sign-out-alt"></i>
-                            </button>
-                        </div>
+            <main class="main-container">
+                <div class="flex-row">
+
+                    <nav class="sidenav">
+                        <ul>
+                            <li class="nav-item @yield('dashboard', '')">
+                                <a href="{{ route('super.admin.admin') }}"> <span class="nav-item-icon icon-md icn-dashboard"></span> Dashboard </a>
+                            </li>
+                            <li class="nav-item @yield('provedores', '')">
+                                <a href="{{ route('super.admin.provedores') }}"> <span class="nav-item-icon icon-md icn-earth"></span> Clientes </a>
+                            </li>
+                            <li class="nav-item @yield('tokens', '')">
+                                <a href="{{ route('super.admin.tokens') }}"> <span class="nav-item-icon icon-md icn-keys"></span> Tokens </a>
+                            </li>
+                            <li class="nav-item @yield('produtos', '')">
+                                <a href="{{ route('super.admin.produtos') }}"> <span class="nav-item-icon icon-md icn-package-variant"></span> Produtos </a>
+                            </li>
+                        </ul>
                     </nav>
-                </header>
 
-                <main class="container w-100 h-100">
-                    @yield('main-content')
-                </main>
+                    <div class="main-content">
+                        @yield('main-content')
+                    </div>
 
-            </div>
+                </div>
+            </main>
 
         </div>
 

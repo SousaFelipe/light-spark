@@ -3,6 +3,7 @@
 
 :root {
 
+    --brand-600:    #0083e1;
     --brand-500:    #0094FE;
     --brand-400:    #02AAFF;
     --brand-300:    #88CBFF;
@@ -42,6 +43,7 @@
     --text-primary:     #2C3854;
     --text-secondary:   #45587D;
     --text-tertiary:    #627AA7;
+    --text-muted:       #cad3e6;
     --text-white:       #FFFFFF;
 
 }
@@ -93,14 +95,19 @@
 
 
 
-*[class*="border-"] { border: 1px solid;                    }
+.border-white       { border: 1px solid var(--bg-white);        }
+.boder-light        { border: 1px solid var(--bg-light);        }
+.border-primary     { border: 1px solid var(--bg-primary);      }
+.border-secondary   { border: 1px solid var(--bg-secondary);    }
+.border-tertiary    { border: 1px solid var(--bg-tertiary);     }
+.border-quaternary  { border: 1px solid var(--bg-quaternary);   }
 
-.border-white       { border-color: var(--bg-white);        }
-.boder-light        { border-color: var(--bg-light);        }
-.border-primary     { border-color: var(--bg-primary);      }
-.border-secondary   { border-color: var(--bg-secondary);    }
-.border-tertiary    { border-color: var(--bg-tertiary);     }
-.border-quaternary  { border-color: var(--bg-quaternary);   }
+.bg-brand-4.border-bottom { border-bottom: 1px solid var(--brand-500); }
+.bg-brand-3.border-bottom { border-bottom: 1px solid var(--brand-400); }
+.bg-brand-2.border-bottom { border-bottom: 1px solid var(--brand-300); }
+.bg-brand-1.border-bottom { border-bottom: 1px solid var(--brand-200); }
+
+
 
 
 
@@ -108,11 +115,12 @@
 
 .flex-row {
     display:        flex;
-    flex-direction: row;
+    flex:           1 1 0;
 }
 
 .flex-col {
     display:        flex;
+    flex:           1 1 0;
     flex-direction: column;
 }
 
@@ -140,8 +148,10 @@
 
 
 
+.fw-1 { font-weight: 100; }
 .fw-3 { font-weight: 300; }
 .fw-4 { font-weight: 400; }
+.fw-5 { font-weight: 500; }
 .fw-6 { font-weight: 600; }
 .fw-7 { font-weight: 700; }
 .fw-8 { font-weight: 800; }
@@ -166,3 +176,12 @@
 
 .pointer    { cursor: pointer; }
 .progress   { cursor: progress; }
+
+
+
+
+
+.shadow-1 {
+    box-shadow:     1px 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius:  var(--px10);
+}

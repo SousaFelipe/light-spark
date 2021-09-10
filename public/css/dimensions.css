@@ -8,6 +8,7 @@
     --px10: 0.625em; /* 10px */
     --px12: 0.750em; /* - 12px - */
     --px14: 0.875em; /* - 14px - */
+    --px16: 1.000em; /* - 16px - */
     --px18: 1.125em; /* - 18px - */
     --px20: 1.250em; /* 20px */
     --px24: 1.500em; /* - 24px - */
@@ -21,10 +22,11 @@
 
 
 
-.fs-7 { font-size: var(--px8);  }
-.fs-6 { font-size: var(--px10); }
-.fs-5 { font-size: var(--px12); }
-.fs-4 { font-size: var(--px14); }
+.fs-8 { font-size: var(--px8);  }
+.fs-7 { font-size: var(--px10); }
+.fs-6 { font-size: var(--px12); }
+.fs-5 { font-size: var(--px14); }
+.fs-4 { font-size: var(--px16); }
 .fs-3 { font-size: var(--px18); }
 .fs-2 { font-size: var(--px24); }
 .fs-1 { font-size: var(--px32); }

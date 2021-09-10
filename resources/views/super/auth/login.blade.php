@@ -16,30 +16,31 @@
         <form id="formSignIn" action="{{ route('super.enter') }}" method="POST">
             @csrf
 
-            <span class="h2">Bem-vindo de volta!</span>
+            <span class="text-center fs-1 fw-6 mb-1">Bem-vindo de volta!</span>
 
-            <div class="input-group">
-                <div class="form-floating mb-1">
-                    <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@exemplo.com" required>
-                    <label for="email">Email</label>
+            <div class="input-group shadow-1">
+                <div id="input-email" class="form-input first-of-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com" required>
                 </div>
-                <div class="form-floating">
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                    <label for="password">Senha</label>
+                <div id="input-password" class="form-input last-of-group">
+                    <label for="password">SENHA</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="********" required>
                 </div>
             </div>
 
-            <div class="checkbox mt-3 mb-3">
+            <div class="checkbox text-center mt-3 mb-3">
                 <label>
                     <input type="checkbox" name="remember" value="remember"> Lembrar de mim
                 </label>
             </div>
         </form>
 
-        <button id="btnEnter" type="button" class="w-100 btn btn-lg btn-primary" onclick="doEnter(this)">
+        <button id="btnEnter" type="button" class="btn btn-lg btn-brand w-100 is-loading" onclick="login(this)">
             Entrar
         </button>
-        <p class="mt-5 mb-3 text-muted">&copy; Ago 2021</p>
+
+        <p class="mt-5 mb-3 text-center text-tertiary">&copy; Ago 2021</p>
 
     </main>
 
