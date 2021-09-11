@@ -2,11 +2,16 @@
 
 
 .main-container {
-    position:       relative;
-    height:         100%;
-    padding-top:    var(--px30);
-    top:            0;
-    bottom:         0;
+    position:           relative;
+    display:            flex;
+    justify-content:    center;
+    flex-grow:          1;
+    height:             100%;
+    padding-left:       var(--px20);
+    padding-top:        var(--px40);
+    padding-right:      var(--px20);
+    top:                0;
+    bottom:             0;
 }
 
 
@@ -14,9 +19,35 @@
 
 
 .main-content {
+    display:            flex;
+    flex-direction:     column;
+    justify-content:    start;
+    padding-bottom:     var(--px40);
+}
+
+.main-content-header {
+    display:            flex;
+    justify-content:    space-between;
+    align-items:        flex-end;
+    margin-bottom:      var(--px20);
+}
+
+.main-content-header-section {
     display:        flex;
-    flex:           1;
-    padding-left:   var(--px20);
+    flex-direction: column;
+    text-align:     start;
+}
+
+.main-content-title {
+    font-size:      var(--px24);
+    font-weight:    600;
+    color:          var(--text-primary);
+}
+
+.main-content-subtitle {
+    font-size:      var(--px18);
+    font-weight:    400;
+    color:          var(--text-tertiary);
 }
 
 
@@ -26,30 +57,52 @@
 .sidenav {
     position:           relative;
     display:            flex;
-    flex-direction:     row;
-    justify-content:    stretch;
-    align-items:        flex-start;
-    width:              13.75em;
-    min-width:          13.75em;
-    max-width:          13.75em;
-    height:             fit-content;
-    padding:            0;
+    flex-direction:     column;
+    align-items:        stretch;
+    width:              15.625em;
+    height:             100%;
+    padding-left:       var(--px14);
+    padding-right:      var(--px14);
+    background-color:   white;
+    border-right:       1px solid var(--bg-tertiary);
+}
+
+.sidenav > .user-panel {
+    box-sizing:         border-box;
+    display:            flex;
+    justify-content:    space-between;
+    align-items:        center;
+    margin-top:         var(--px40);
+    padding:            var(--px8);
+    border:             1px solid var(--bg-secondary);
+    border-radius:      var(--px8);
+}
+
+.user-panel-description {
+    display:        flex;
+    flex-direction: column;
+    align-items:    stretch;
+    align-self:     center;
+    flex-wrap:      0;
+    text-align:     start;
+    margin-left:    var(--px10);
 }
 
 .sidenav > ul {
+    box-sizing:     border-box;
+    display:        flex;
     flex-direction: column;
-    width:          100%;
-    margin:         0;
-    top:            0;
+    align-items:    stretch;
+    flex-grow:      1;
+    margin-top:     var(--px40);
 }
 
 .nav-item {
-    padding-left:   var(--px14);
-    padding-top:    var(--px8);
-    padding-bottom: var(--px8);
-    border-radius:  var(--px4);
+    padding-top:    var(--px16);
+    padding-bottom: var(--px16);
     margin-bottom:  var(--px4);
-    color:          var(--text-primary);
+    border-radius:  var(--px8);
+    color:          var(--text-tertiary);
     font-size:      var(--px14);
     font-weight:    500;
     cursor:         pointer;
@@ -61,38 +114,37 @@
 }
 
 .nav-item-icon {
-    margin-right:   var(--px14);
+    margin-left:    var(--px14);
+    margin-right:   var(--px18);
     color:          var(--bg-quaternary);
     fill:           var(--bg-quaternary);
 }
 
 .nav-item.active {
-    background-color:   var(--accent-400);
-    text-shadow:        1px 1px 3px rgba(0, 0, 0, 0.25);
+    background-color:   var(--brand-200);
+    color:              var(--brand-600);
+    font-weight:        600;
 }
 
-.nav-item.active,
 .nav-item.active > a > .nav-item-icon {
-    color:  white;
-    fill:   white;
+    color:  var(--brand-600);
+    fill:   var(--brand-600);
 }
 
 
 
 
 
-@media screen and (max-width: 1023.98px) {
-    .main-container {
+@media screen and (max-width: 1099.98px) {
+    .main-content {
         width: 100%;
     }
 }
 
-
-
-@media screen and (min-width: 1024px) {
-    .main-container {
-        width:      1000px;
-        min-width:  1000px;
-        max-width:  1000px;
+@media screen and (min-width: 1100px) {
+    .main-content {
+        width:      850px;
+        min-width:  850px;
+        max-width:  850px;
     }
 }

@@ -8,19 +8,21 @@ $(function () {
             const provedores = await response.provedores
 
             const table = new Table('provedores', {
-                titles: ['CNPJ', 'RAZÃO', 'ENDEREÇO'],
-                rows: {
-                    cells: { classes: ['cell'] }
-                },
-                cols: [ 30, 30, 40 ]
+                headers: ['CNPJ', 'RAZÃO', 'ENDEREÇO', 'TOKENS'],
+                columns: [ 2, 3, 5, 2 ]
             })
 
             provedores.forEach(provedor => {
-                table.addRow([
-                    app.textMask(provedor.cnpj).cnpj(),
-                    provedor.razao,
-                    `${ provedor.municipio }, ${ provedor.logradouro }`
-                ])
+                table.addRow(
+                    provedor.id, [
+                        app.textMask(provedor.cnpj).cnpj(),
+                        provedor.razao,
+                        `${ provedor.municipio }, ${ provedor.logradouro }`
+                    ],
+                    (data) => {
+                        alert(data)
+                    }
+                )
             })
 
             table.render()

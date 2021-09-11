@@ -6,56 +6,73 @@ class Table {
 
     constructor (id, settings = { }) {
 
-        this.table = document.getElementById(id)
-        this.thead = $(`#${ id } > thead`)
-        this.tbody = $(`#${ id } > tbody`)
+        this.header = $(`#${ id } > div.table-header`)
+        this.body = $(`#${ id } > div.table-body`)
 
         this.settings = settings
-        this.titles = []
         this.rows = []
+
+        this.layout = this.createLayout()
     }
 
 
-    classes (index = false) {
+    createLayout () {
+        let inlineLayout = ``
+        let lasColumnPos = (this.settings.columns.length - 1)
 
-        let classes = this.settings.rows.cells.classes
-        let inlines = classes.join(' ')
-
-        return (classes.length > 0)
-            ? (index !== false)
-                ? `class="${ inlines } w-${ this.settings.cols[index] }"`
-                : `class="${ inlines }"`
-            : ``
-    }
-
-
-    addRow (rowData) {
-        let innerHTML = ``
-
-        rowData.forEach((data, index) => {
-            innerHTML += `<td ${ this.classes(index) }>${ data }</td>`
+        this.settings.columns.forEach((col, i) => {
+            inlineLayout += (i < lasColumnPos)
+                ? `${ col }fr `
+                : `${ col }fr`
         })
 
-        this.rows.push(`<tr>${ innerHTML }</tr>`)
+        return inlineLayout
     }
 
 
-    renderHeader () {
-        let innerHTML = ``
+    addRow (id, data, callback = null) {
 
-        this.settings.titles.forEach((title, index) => {
-            innerHTML += `<th ${ this.classes(index) }> ${ title } </th>`
+        let row = $(`<div/>`)
+            .attr('id', id)
+            .addClass('table-row')
+            .css('grid-template-columns', this.layout)
+
+        if (callback != null) {
+            row.css('cursor', 'pointer')
+            .on('click', function (event) {
+                callback.call(this, id)
+            })
+        }
+
+        data.forEach(data => {
+            row.append(
+                $('<div/>')
+                    .addClass('table-cell')
+                    .text(data)
+            )
         })
 
-        this.thead.append(`<tr>${ innerHTML }</tr>`)
+        this.rows.push(row)
+    }
+
+
+    renderHeader (header) {
+        this.header.append(
+            $(`<span/>`)
+                .addClass('table-header-cell')
+                .text(header)
+        )
+    }
+
+
+    renderRow (row) {
+        this.body.append(row)
     }
 
 
     render () {
-        this.renderHeader()
-
-        for (let i = 0; i < this.rows.length; i++) {
-            this.tbody.append(this.rows[i])
-        }
+        this.header.css('grid-template-columns', this.layout)
+        this.settings.headers.forEach(header => this.renderHeader(header))
+        this.rows.forEach(row => this.renderRow(row))
     }
 }

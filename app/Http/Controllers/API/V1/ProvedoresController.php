@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Repository\Provedor\ProvedorRepository;
+use App\Repository\Provedor\TokenRepository;
 
 
 class ProvedoresController extends Controller
@@ -23,6 +24,15 @@ class ProvedoresController extends Controller
     {
         return response()->json([
             'provedores' => ProvedorRepository::fetchInativos()
+        ]);
+    }
+
+
+
+    public function tokens(Request $request)
+    {
+        return response()->json([
+            'tokens' => TokenRepository::all()
         ]);
     }
 }
