@@ -178,6 +178,21 @@
 
 
 
+.control-action {
+    border:             none;
+    padding:            var(--px4);
+    background-color:   var(--bg-light);
+    border-radius:      var(--px4);
+    cursor:             pointer;
+}
+
+.control-action:hover {
+    background-color: var(--bg-secondary);
+}
+
+
+
+
 
 .form-input {
     display:            flex;
@@ -284,9 +299,14 @@ span[class*="icon-"] {
     display: block;
 }
 
-.icon-sm {
+.icon-sx {
     width:  var(--px14);
     height: var(--px14);
+}
+
+.icon-sm {
+    width:  var(--px16);
+    height: var(--px16);
 }
 
 .icon-md {
@@ -370,7 +390,6 @@ span[class*="icon-"] {
     display: grid;
 }
 
-.table-row:hover { background-color: var(--bg-secondary); }
 .table-row {
     display:        grid;
     height:         2.625em;
@@ -381,18 +400,29 @@ span[class*="icon-"] {
 }
 
 .table-header-cell,
-.table-cell {
+.table-header-action,
+.table-cell,
+.table-cell-action {
     display:        block;
     margin-top:     auto;
     margin-bottom:  auto;
     overflow:       hidden;
     white-space:    nowrap;
+    padding-bottom: var(--px4);
+    padding-top:    var(--px4);
+}
+
+.table-header-cell,
+.table-cell {
     text-overflow:  ellipsis;
     padding-left:   var(--px10);
-    padding-top:    var(--px4);
     padding-right:  var(--px10);
-    padding-bottom: var(--px4);
     text-align:     start;
+}
+
+.table-header-action
+.table-cell-action {
+    text-align: end;
 }
 
 .table-header-cell {
