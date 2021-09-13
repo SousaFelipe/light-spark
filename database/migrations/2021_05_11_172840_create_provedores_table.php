@@ -39,8 +39,6 @@ class CreateProvedoresTable extends Migration
             $table->string('class_responsavel', 96);
 
             $table->enum('ativo', ['S', 'N']);
-
-            $table->string('ixc_token', 66);
         });
     }
 

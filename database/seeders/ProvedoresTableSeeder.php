@@ -38,9 +38,7 @@ class ProvedoresTableSeeder extends Seeder
             'titular_contato'   => '88981748895',
             'class_responsavel' => 'Titular Pessoa Física Residente ou Domiciliado no Brasil',
 
-            'ativo'             => 'S',
-
-            'ixc_token'         => '6:d94f8ccff332c49a266088ea3e0afaa2bdac77157bc4c698d7ab7e35971192bd'
+            'ativo'             => 'S'
         ]);
     }
 }

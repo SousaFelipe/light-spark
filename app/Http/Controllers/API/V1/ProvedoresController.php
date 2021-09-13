@@ -11,10 +11,12 @@ use App\Repository\Provedor\TokenRepository;
 
 class ProvedoresController extends Controller
 {
-    public function ativos(Request $request)
+    public function read(Request $request)
     {
+        $provedores = ProvedorRepository::all();
+
         return response()->json([
-            'provedores' => ProvedorRepository::fetchAtivos()
+            'provedores' => ProvedorRepository::pushTokens($provedores)
         ]);
     }
 

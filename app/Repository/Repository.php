@@ -10,10 +10,7 @@ class Repository
 
     protected static function bind($class)
     {
-        if (static::$instance === null) {
-            static::$instance = new $class;
-        }
-
+        static::$instance = new $class;
         return static::$instance;
     }
 }

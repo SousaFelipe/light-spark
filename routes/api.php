@@ -17,6 +17,7 @@ Route::prefix('/v1')->group(function () {
         Route::get('/user', [AuthController::class, 'user'])->name('user');
     });
 
+    Route::get('/provedores/read', [ProvedoresController::class, 'read']);
     Route::get('/provedores/ativos', [ProvedoresController::class, 'ativos'])->name('provedores.ativos');
     Route::get('/provedores/tokens', [ProvedoresController::class, 'tokens'])->name('provedores.tokens');
 

@@ -14,6 +14,24 @@
 
 
 
+.badge.bg-accent-5 {
+    color:  white;
+    fill:   white;
+}
+
+.badge-sm {
+    padding-left:   var(--px12);
+    padding-top:    var(--px4);
+    padding-right:  var(--px12);
+    padding-bottom: var(--px4);
+    border-radius:  var(--px12);
+    font-size:      var(--px12);
+    font-weight:    500;
+}
+
+
+
+
 .btn {
     display:            flex;
     justify-content:    center;
@@ -198,6 +216,7 @@
     outline:        none;
     border-radius:  var(--px10);
     font-size:      var(--px16);
+    color:          var(--text-primary);
 }
 
 .form-input.first-of-group,
@@ -370,7 +389,9 @@ span[class*="icon-"] {
     white-space:    nowrap;
     text-overflow:  ellipsis;
     padding-left:   var(--px10);
+    padding-top:    var(--px4);
     padding-right:  var(--px10);
+    padding-bottom: var(--px4);
     text-align:     start;
 }
 

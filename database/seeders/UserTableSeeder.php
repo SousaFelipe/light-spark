@@ -21,7 +21,7 @@ class UserTableSeeder extends Seeder
             'id'                => 1,
             'code'              => '2dPsQxPM',
             'name'              => 'Felipe Sousa',
-            'email'             => 'sousa.felipe@darth.com',
+            'email'             => 'sousa.felipe@spark.com',
             'password'          => bcrypt('marver1234'),
             'remember_token'    => Str::random(32),
             'created_at'        => Carbon::now()

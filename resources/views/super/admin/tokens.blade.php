@@ -6,8 +6,7 @@
 
 
 
-@section('main-content-title', 'Clientes')
-@section('main-content-subtitle', 'Com acesso ao HUB e à API')
+@section('main-content-title', 'Tokens')
 
 
 

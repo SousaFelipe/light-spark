@@ -48,7 +48,7 @@ class Table {
             row.append(
                 $('<div/>')
                     .addClass('table-cell')
-                    .text(data)
+                    .append(data)
             )
         })
 

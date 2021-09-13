@@ -15,13 +15,13 @@ class CreateTokensTable extends Migration
     {
         Schema::create('tokens', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('provedor', 14);
+            $table->bigInteger('provedor');
 
-            $table->string('token', 96);
-            $table->date('data_cadastro', 96);
-            $table->date('data_ativacao');
-            $table->date('data_alteracao');
-            $table->enum('ativo', ['S', 'N']);
+            $table->string('token', 96)->unique();
+            $table->date('data_cadastro');
+            $table->date('data_ativacao')->nullable();
+            $table->date('data_alteracao')->nullable();
+            $table->enum('ativo', ['S', 'N'])->default('N');
         });
     }
 
