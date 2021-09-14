@@ -327,6 +327,15 @@ span[class*="icon-"] {
 
 
 
+.super-panel {
+    position:   absolute;
+    height:     100%;
+}
+
+
+
+
+
 .spinner,
 .spinner:after {
     position:       absolute;

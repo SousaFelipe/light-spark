@@ -1,8 +1,10 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+
 
 class CreateTokensTable extends Migration
 {
@@ -22,6 +24,7 @@ class CreateTokensTable extends Migration
             $table->date('data_cadastro');
             $table->date('data_ativacao')->nullable();
             $table->date('data_alteracao')->nullable();
+            $table->string('api_url', 96)->unique();
             $table->enum('ativo', ['S', 'N'])->default('N');
         });
     }

@@ -22,11 +22,15 @@
         </div>
     </div>
 
+    <div id="panel-detalhes" class="super-panel">
+
+    </div>
+
 @endsection
 
 
 
 @section('page-scripts')
     <script src="{{ asset('js/src/components/Table.js') }}"></script>
-    <script src="{{ asset('js/src/pages/super.provedores.js') }}"></script>
+    <script src="{{ asset('js/src/pages/provedores/provedores.js') }}"></script>
 @endsection

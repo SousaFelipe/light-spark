@@ -21,7 +21,7 @@ $(function () {
                     ]
                 ).action(
                     `<span class="icon-sm icn-open-in-new text-primary"></span>`,
-                    (row) => console.log(row)
+                    (row) => {  }
                 )
             })
 
