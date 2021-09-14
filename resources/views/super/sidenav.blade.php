@@ -27,23 +27,23 @@
                             <span class="text-secondary fs-7 fw-5">Administrador</span>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-close bg-danger-4 no-shadow" onclick="app.form('formSignOut').submit()">
+                    <button type="button" class="btn btn-close bg-danger-4 no-shadow" onclick="window.APP.form('formSignOut').submit()">
                         <span class="icon-md icn-exit"></span>
                     </button>
                 </div>
 
                 <ul>
-                    <li class="nav-item @yield('dashboard', '')">
-                        <a href="{{ route('super.admin.admin') }}"> <span class="nav-item-icon icon-md icn-dashboard"></span> Dashboard </a>
+                    <li class="nav-item" data-nav-item="dashboard">
+                        <span class="nav-item-icon icon-md icn-dashboard"></span>Dashboard
                     </li>
-                    <li class="nav-item @yield('provedores', '')">
-                        <a href="{{ route('super.admin.provedores') }}"> <span class="nav-item-icon icon-md icn-earth"></span> Clientes </a>
+                    <li class="nav-item" data-nav-item="provedores">
+                        <span class="nav-item-icon icon-md icn-earth"></span>Provedores
                     </li>
-                    <li class="nav-item @yield('tokens', '')">
-                        <a href="{{ route('super.admin.tokens') }}"> <span class="nav-item-icon icon-md icn-keys"></span> Tokens </a>
+                    <li class="nav-item" data-nav-item="tokens">
+                        <span class="nav-item-icon icon-md icn-keys"></span>Tokens
                     </li>
-                    <li class="nav-item @yield('produtos', '')">
-                        <a href="{{ route('super.admin.produtos') }}"> <span class="nav-item-icon icon-md icn-package-variant"></span> Produtos </a>
+                    <li class="nav-item" data-nav-item="produtos">
+                        <span class="nav-item-icon icon-md icn-package-variant"></span>Produtos
                     </li>
                 </ul>
 
@@ -52,20 +52,7 @@
                 </div>
             </nav>
 
-            <div class="main-container">
-                <main class="main-content">
-
-                    <div class="main-content-header">
-                        <div class="main-content-header-section">
-                            <span class="main-content-title"> @yield('main-content-title', '') </span>
-                            <span class="main-content-subtitle"> @yield('main-content-subtitle', '') </span>
-                        </div>
-                    </div>
-
-
-                    @yield('main-content')
-                </main>
-            </div>
+            <iframe id="main" width="100%" height="100%"></iframe>
 
         </div>
 
@@ -76,6 +63,7 @@
         @include('includes.scripts')
 
         <script src="{{ asset('js/src/components/Request.js') }}"></script>
+        <script src="{{ asset('js/src/layouts/sidenav.js') }}"></script>
 
         @yield('page-scripts')
 

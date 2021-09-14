@@ -3,7 +3,7 @@
 
 $(function () {
 
-    new Request(app.api.url(`provedores/read`))
+    new Request(window.APP.url().api('provedores/read'))
         .get(async response => {
             const provedores = await response.provedores
 
@@ -15,7 +15,7 @@ $(function () {
             provedores.forEach(provedor => {
                 table.addRow(
                     provedor.id, [
-                        app.textMask(provedor.cnpj).cnpj(),
+                        window.APP.textMask(provedor.cnpj).cnpj(),
                         provedor.razao,
                         `${ provedor.municipio }, ${ provedor.logradouro }`,
                     ]

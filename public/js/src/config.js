@@ -9,6 +9,8 @@ const API_VSN = 1
 
 const config = {
 
+    webUri: WEB_URL,
+
     apiUri: `${ API_URL }/v${ API_VSN }`
 
 }

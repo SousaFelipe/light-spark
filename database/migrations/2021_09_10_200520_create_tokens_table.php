@@ -17,6 +17,7 @@ class CreateTokensTable extends Migration
             $table->id();
             $table->bigInteger('provedor');
 
+            $table->string('razao', 96)->unique();
             $table->string('token', 96)->unique();
             $table->date('data_cadastro');
             $table->date('data_ativacao')->nullable();

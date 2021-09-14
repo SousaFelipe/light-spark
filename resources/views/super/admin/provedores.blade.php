@@ -1,8 +1,4 @@
-@extends('super.sidenav')
-
-
-
-@section('provedores', 'active')
+@extends('super.frame')
 
 
 

@@ -1,8 +1,8 @@
-@extends('super.sidenav')
+@extends('super.frame')
 
 
 
-@section('dashboard', 'active')
+@section('main-content-title', 'Dashboard')
 
 
 

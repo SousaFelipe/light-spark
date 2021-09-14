@@ -13,7 +13,7 @@ let login = function (target) {
     )
 
     if (credentials) {
-        app.button('btnEnter').setLoding(true)
+        window.APP.button('btnEnter').setLoding(true)
         new Request('enter', credentials).post(response => handleAuthentication(response, target))
     }
     else {
@@ -34,20 +34,20 @@ let getValidated = function (email, password) {
 
 let handleAuthentication = function (response, target) {
     if (response.auth === true) {
-        app.form('formSignIn').submit()
+        window.APP.form('formSignIn').submit()
     }
     else {
 
         if (response.errors.email) {
-            app.input('input-email').invalidate()
+            window.APP.input('input-email').invalidate()
             toast.display(response.errors.email)
         }
         else if (response.errors.password) {
-            app.input('input-password').invalidate()
+            window.APP.input('input-password').invalidate()
             toast.display(response.errors.password)
         }
 
         target.removeAttribute('disabled')
-        app.button('btnEnter').setLoding(false)
+        window.APP.button('btnEnter').setLoding(false)
     }
 }

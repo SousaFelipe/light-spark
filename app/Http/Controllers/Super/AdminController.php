@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function admin(Request $request)
     {
-        return $this->dashboard($request);
+        return view('super.sidenav');
     }
 
 

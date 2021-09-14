@@ -1,8 +1,4 @@
-@extends('super.sidenav')
-
-
-
-@section('tokens', 'active')
+@extends('super.frame')
 
 
 
