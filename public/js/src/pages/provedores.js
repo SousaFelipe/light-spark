@@ -3,7 +3,7 @@
 
 $(function () {
 
-    new Request(window.APP.url().api('provedores/read'))
+    new Request(window.APP.url('super/admin').web('provedores/listar'))
         .get(async response => {
             const provedores = await response.provedores
 
@@ -21,7 +21,7 @@ $(function () {
                     ]
                 ).action(
                     `<span class="icon-sm icn-open-in-new text-primary"></span>`,
-                    (row) => new Super("provedor-detalhes").targetData(row).show()
+                    (row) => mostrarDetalhesProvedor(row)
                 )
             })
 
@@ -30,3 +30,20 @@ $(function () {
         })
 
 })
+
+
+
+function mostrarDetalhesProvedor (row) {
+
+    new Request(window.APP.url('super/admin').web(`provedores/buscar/${ row }`))
+        .get(async response => {
+            const provedor = response.provedor
+
+            new Super('provedor-detalhes')
+                .setTitle(provedor.razao)
+                .setSubitle(window.APP.textMask(provedor.cnpj).cnpj())
+                .show()
+
+            console.log(provedor)
+        })
+}

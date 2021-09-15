@@ -16,19 +16,10 @@ class ProvedorRepository extends Repository
     }
 
 
-    public static function fetchAtivos()
+    public static function find($provedorID)
     {
-        return self::bind(Provedor::class)
-            ->where('ativo', 'S')
-            ->get();
-    }
-
-
-    public static function fetchInativos()
-    {
-        return self::bind(Provedor::class)
-            ->where('ativo', 'N')
-            ->get();
+        $provedor = self::bind(Provedor::class)->where('id', $provedorID)->first();
+        return self::pullTokens(array($provedor));
     }
 
 
@@ -41,12 +32,11 @@ class ProvedorRepository extends Repository
     }
 
 
-    public static function pushTokens($provedores)
+    public static function pullTokens($provedores)
     {
         foreach ($provedores as $provedor) {
             $provedor['tokens'] = TokenRepository::fetchByProvedor($provedor->id);
         }
-
         return $provedores;
     }
 }

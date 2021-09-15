@@ -64,7 +64,6 @@ $(function () {
                 }
             },
 
-
             url: (level = false) => {
                 return {
 
@@ -80,14 +79,7 @@ $(function () {
                             : `${ config.apiUri }/${ endpoint }`
                     }
                 }
-            },
-
-            api: {
-
-                url: (endpoint) => {
-                    return `${ config.apiUri }/${ endpoint }`
-                }
-            },
+            }
         }
 
         window.APP.ENV = {

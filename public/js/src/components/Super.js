@@ -5,24 +5,48 @@ class Super {
 
 
     constructor (id) {
-        this.element = $(`#${ id }`)
+
+        this.id = id
+        this.element = document.getElementById(id)
+        this.btnClose = $(`button[data-super-close="${ id }"]`)
+
+        this.bindAction()
     }
 
 
-    targetData (data) {
-        this.data = data
+    bindAction () {
+        const self = this
+
+        this.btnClose.on('click', function(e) {
+            self.hide()
+        })
+    }
+
+
+    setTitle (title) {
+        $(`#${ this.id }-titulo`).text(title)
+        return this
+    }
+
+
+    setSubitle (subtitle) {
+        $(`#${ this.id }-subtitulo`).text(subtitle)
         return this
     }
 
 
     show () {
-        this.element.css('display', 'flex')
+        $(this.element).fadeIn('fast', function() {
+            $(this).css('display', 'flex')
+        })
         return this
     }
 
 
     hide () {
-        this.element.css('display', 'none')
+        $(this.element).fadeOut('fast', function() {
+            $(this).css('display', 'none')
+        })
         return this
     }
 }

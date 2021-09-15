@@ -64,6 +64,14 @@ a {
 
 
 
+hr {
+    background-color:   var(--bg-tertiary);
+    height:             1px;
+    border:             none;
+}
+
+
+
 ul,
 li,
 li > a {
