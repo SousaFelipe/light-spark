@@ -193,13 +193,17 @@
 
 
 
+.form-input.light       { background-color: var(--bg-light);      }
+.form-input.primary     { background-color: var(--bg-primary);    }
+.form-input.secondary   { background-color: var(--bg-secondary);  }
+.form-input.tertiary    { background-color: var(--bg-tertiary);   }
+.form-input.quaternary  { background-color: var(--bg-quaternary); }
+
 .form-input {
-    display:            flex;
-    flex-direction:     column;
-    width:              100%;
-    height:             auto;
-    background-color:   var(--bg-white);
-    border-radius:      var(--px10);
+    display:        flex;
+    flex-direction: column;
+    width:          100%;
+    height:         auto;
 }
 
 .form-input:focus-within {
@@ -214,23 +218,14 @@
 
 .form-input > label {
     position:       absolute;
-    margin-left:    var(--px30);
-    margin-top:     var(--px24);
     color:          var(--text-tertiary);
     font-weight:    600;
-    font-size:      var(--px10);
 }
 
 .form-input > input {
-    padding-left:   var(--px18);
-    padding-top:    var(--px40);
-    padding-right:  var(--px18);
-    padding-bottom: var(--px18);
-    border:         none;
-    outline:        none;
-    border-radius:  var(--px10);
-    font-size:      var(--px16);
-    color:          var(--text-primary);
+    border:     none;
+    outline:    none;
+    color:      var(--text-primary);
 }
 
 .form-input.first-of-group,
@@ -249,6 +244,47 @@
 
 .form-input.is-invalid {
     border: 1px solid var(--danger-500);
+}
+
+
+
+.form-input-md {
+    border-radius: var(--px10);
+}
+
+.form-input-md > label {
+    margin-left:    var(--px20);
+    margin-top:     var(--px14);
+    font-size:      var(--px10);
+}
+
+.form-input-md > input {
+    padding-left:   var(--px12);
+    padding-top:    var(--px30);
+    padding-right:  var(--px12);
+    padding-bottom: var(--px12);
+    border-radius:  var(--px8);
+    font-size:      var(--px16);
+}
+
+
+.form-input-lg {
+    border-radius: var(--px10);
+}
+
+.form-input-lg > label {
+    margin-left:    var(--px30);
+    margin-top:     var(--px24);
+    font-size:      var(--px10);
+}
+
+.form-input-lg > input {
+    padding-left:   var(--px18);
+    padding-top:    var(--px40);
+    padding-right:  var(--px18);
+    padding-bottom: var(--px18);
+    border-radius:  var(--px10);
+    font-size:      var(--px18);
 }
 
 

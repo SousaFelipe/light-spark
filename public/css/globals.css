@@ -81,12 +81,12 @@
 .bg-danger-3    { background-color: var(--danger-300) !important; }
 .bg-danger-2    { background-color: var(--danger-200) !important; }
 
-.bg-white       { background-color: var(--bg-white);      }
-.bg-light       { background-color: var(--bg-light);      }
-.bg-primary     { background-color: var(--bg-primary);    }
-.bg-secondary   { background-color: var(--bg-secondary);  }
-.bg-tertiary    { background-color: var(--bg-tertiary);   }
-.bg-quaternary  { background-color: var(--bg-quaternary); }
+.bg-white       { background-color: var(--bg-white)      !important; }
+.bg-light       { background-color: var(--bg-light)      !important; }
+.bg-primary     { background-color: var(--bg-primary)    !important; }
+.bg-secondary   { background-color: var(--bg-secondary)  !important; }
+.bg-tertiary    { background-color: var(--bg-tertiary)   !important; }
+.bg-quaternary  { background-color: var(--bg-quaternary) !important; }
 
 .text-primary   { color: var(--text-primary);   fill: var(--text-primary);      }
 .text-secondary { color: var(--text-secondary); fill: var(--text-secondary);    }

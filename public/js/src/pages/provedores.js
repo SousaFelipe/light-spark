@@ -39,6 +39,14 @@ function mostrarDetalhesProvedor (row) {
         .get(async response => {
             const provedor = response.provedor
 
+            $(`#fantasia`).val(provedor.nome_fantasia)
+            $('#titular').val(provedor.titular)
+            $('#ctt-titular').val(window.APP.textMask(provedor.titular_contato).cell())
+
+            $('#cep').val(window.APP.textMask(provedor.cep).cep())
+            $('#cidade').val(`${ provedor.municipio } - ${ provedor.uf }`)
+            $('#logradouro').val(`Bairro ${ provedor.bairro }, ${ provedor.logradouro }`)
+
             new Super('provedor-detalhes')
                 .setTitle(provedor.razao)
                 .setSubitle(window.APP.textMask(provedor.cnpj).cnpj())

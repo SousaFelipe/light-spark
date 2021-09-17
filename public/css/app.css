@@ -30,7 +30,7 @@ body {
 
 input {
     color:              var(--text-secondary);
-    background-color:   white;
+    background-color:   transparent;
 }
 
 input:-webkit-autofill,
