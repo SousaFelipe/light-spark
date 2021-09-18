@@ -1,7 +1,7 @@
 
 
-
 $(function () {
+    const mask = window.APP.mask
 
     new Request(window.APP.url('super/admin').web('provedores/listar'))
         .get(async response => {
@@ -15,7 +15,7 @@ $(function () {
             provedores.forEach(provedor => {
                 table.addRow(
                     provedor.id, [
-                        window.APP.textMask(provedor.cnpj).cnpj(),
+                        mask(provedor.cnpj).cnpj(),
                         provedor.razao,
                         `${ provedor.municipio }, ${ provedor.logradouro }`,
                     ]
@@ -34,24 +34,36 @@ $(function () {
 
 
 function mostrarDetalhesProvedor (row) {
+    const mask = window.APP.mask
 
     new Request(window.APP.url('super/admin').web(`provedores/buscar/${ row }`))
         .get(async response => {
-            const provedor = response.provedor
+            const provedor = await response.provedor
 
             $(`#fantasia`).val(provedor.nome_fantasia)
             $('#titular').val(provedor.titular)
-            $('#ctt-titular').val(window.APP.textMask(provedor.titular_contato).cell())
+            $('#ctt-titular').val(mask(provedor.titular_contato).cell())
 
-            $('#cep').val(window.APP.textMask(provedor.cep).cep())
-            $('#cidade').val(`${ provedor.municipio } - ${ provedor.uf }`)
+            $('#cep').val(mask(provedor.cep).cep())
+            $('#cidade').val(`${ provedor.municipio }-${ provedor.uf }`)
             $('#logradouro').val(`Bairro ${ provedor.bairro }, ${ provedor.logradouro }`)
+
+            $('#ctt1').val(mask(provedor.contatos.split(';')[0]).cell())
+            $('#ctt2').val(mask(provedor.contatos.split(';')[1]).cell())
+            $('#abertura').val(mask(provedor.data_abertura).date())
+            $('#situacao').val(mask(provedor.data_situacao).date())
 
             new Super('provedor-detalhes')
                 .setTitle(provedor.razao)
-                .setSubitle(window.APP.textMask(provedor.cnpj).cnpj())
+                .setSubitle(`${ provedor.nome_fantasia } - ${ mask(provedor.cnpj).cnpj() }`)
                 .show()
 
             console.log(provedor)
+        })
+
+    new Request(window.APP.url('super/admin').web(`tokens/listar/${ row }`))
+        .get(async response => {
+            const tokens = await response.tokens
+            console.log(tokens)
         })
 }

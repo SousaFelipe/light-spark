@@ -56,7 +56,7 @@ $(function () {
                 }
             },
 
-            textMask: (clean) => {
+            mask: (clean) => {
                 return {
                     cell: () => {
                         return clean.replace(/\D/g, '').replace(/^(\d{2})(\d{1})(\d{4})(\d{4})?/, '($1) $2 $3-$4')
@@ -68,6 +68,10 @@ $(function () {
 
                     cnpj: (format = '$1.$2.$3/$4-$5') => {
                         return clean.replace(/\D/g, '').replace(/^(\d{2})(\d{3})?(\d{3})?(\d{4})?(\d{2})?/, format)
+                    },
+
+                    date: (joiner = '/') => {
+                        return clean.split('-').reverse().join(joiner)
                     }
                 }
             },

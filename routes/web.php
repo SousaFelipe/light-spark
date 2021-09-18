@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Super\AuthController;
 use App\Http\Controllers\Super\AdminController;
 use App\Http\Controllers\Super\ProvedoresController;
+use App\Http\Controllers\Super\TokensController;
 
 
 
@@ -37,7 +38,11 @@ Route::prefix('/super')->name('super.')->group(function () {
         });
 
 
-        Route::get('/tokens', [AdminController::class, 'tokens'])->name('tokens');
+        Route::prefix('/tokens')->name('tokens.')->group(function () {
+            Route::get('/listar/{provedor}', [TokensController::class, 'listar']);
+
+        });
+
         Route::get('/produtos', [AdminController::class, 'produtos'])->name('produtos');
 
     });

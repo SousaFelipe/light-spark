@@ -107,14 +107,20 @@
     display:            flex;
     justify-content:    center;
     align-items:        center;
-    width:              24px;
-    height:             24px;
+    width:              32px;
+    height:             32px;
     border:             none;
     border-radius:      var(--px4);
     background:         transparent;
     cursor:             pointer;
     text-align:         center;
     transition:         background-color 250ms ease-in;
+}
+
+.btn-close.end,
+.btn-close-dark.end {
+    position:   absolute;
+    align-self: flex-end;
 }
 
 .btn-close >        span { fill: var(--text-white);   }
@@ -142,7 +148,7 @@
     align-items:        flex-start;
     padding-left:       var(--px30);
     padding-top:        var(--px20);
-    padding-right:      var(--px30);
+    padding-right:      var(--px20);
     padding-bottom:     var(--px20);
 }
 
@@ -150,13 +156,12 @@
     font-size:      var(--px24);
     color:          var(--text-secondary);
     font-weight:    500;
-    line-height:    1em;
 }
 
 .card-header > .subtitle {
-    font-size:      var(--px12);
+    font-size:      var(--px14);
     color:          var(--text-tertiary);
-    line-height:    0.75em;
+    line-height:    1.5em;
 }
 
 .card-body {
@@ -193,6 +198,7 @@
 
 
 
+.form-input.white       { background-color: var(--bg-white);      }
 .form-input.light       { background-color: var(--bg-light);      }
 .form-input.primary     { background-color: var(--bg-primary);    }
 .form-input.secondary   { background-color: var(--bg-secondary);  }
@@ -407,13 +413,13 @@ span[class*="icon-"] {
 }
 
 .super-title {
-    font-size:      var(--px24);
+    font-size:      var(--px30);
     font-weight:    600;
     color:          var(--text-primary);
 }
 
 .super-subtitle {
-    font-size:      var(--px18);
+    font-size:      var(--px20);
     font-weight:    400;
     color:          var(--text-tertiary);
 }

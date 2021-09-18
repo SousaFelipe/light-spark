@@ -19,11 +19,11 @@
             <span class="text-center fs-1 fw-6 mb-1">Bem-vindo de volta!</span>
 
             <div class="input-group shadow-1">
-                <div id="input-email" class="form-input first-of-group">
+                <div id="input-email" class="form-input white form-input-lg first-of-group">
                     <label for="email">EMAIL</label>
                     <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com" required>
                 </div>
-                <div id="input-password" class="form-input last-of-group">
+                <div id="input-password" class="form-input white form-input-lg last-of-group">
                     <label for="password">SENHA</label>
                     <input type="password" id="password" name="password" class="form-control" placeholder="********" required>
                 </div>
