@@ -35,6 +35,12 @@ class Super {
     }
 
 
+    setOnClose (onClose) {
+        this.onClose = onClose
+        return this
+    }
+
+
     show () {
         $(this.element).fadeIn('fast', function() {
             $(this).css('display', 'flex')
@@ -44,9 +50,16 @@ class Super {
 
 
     hide () {
+        const onClose = this.onClose
+
         $(this.element).fadeOut('fast', function() {
             $(this).css('display', 'none')
+
+            if (onClose) {
+                onClose.call(this)
+            }
         })
+
         return this
     }
 }

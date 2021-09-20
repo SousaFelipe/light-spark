@@ -100,13 +100,22 @@ class Table {
     }
 
 
+    clear () {
+        this.rows = []
+        this.layout = ('')
+
+        this.header.text(``)
+        this.body.text(``)
+    }
+
+
     renderHeader (header) {
         const isAction = (header == 'action')
 
         this.header.append(
             $(`<span/>`)
                 .addClass(isAction ? 'table-header-action' : 'table-header-cell')
-                .text(isAction ? '...' : header)
+                .text(isAction ? 'AÇÃO' : header)
         )
     }
 

@@ -65,22 +65,13 @@ a {
 
 
 hr {
-    background-color:   var(--bg-tertiary);
-    height:             1px;
-    border:             none;
+    height: 1px;
+    border: none;
 }
 
 
 
-ul,
-li,
-li > a {
-    display:        flex;
-    flex-direction: row;
-    align-items:    center;
-    width:          100%;
-    list-style:     none;
-}
+
 
 
 
@@ -101,4 +92,19 @@ th {
     border-color:   inherit;
     border-style:   solid;
     border-width:   0;
+}
+
+
+
+
+
+
+::marker {
+    margin-right:           0;
+    unicode-bidi:           isolate;
+    font-variant-numeric:   tabular-nums;
+    text-transform:         none;
+    text-indent:            0px !important;
+    text-align:             start !important;
+    text-align-last:        start !important;
 }

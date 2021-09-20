@@ -35,15 +35,17 @@
 
     --bg-white:     #FFFFFF;
     --bg-light:     #F0F3FA;
-    --bg-primary:   #F7F9FD;
-    --bg-secondary: #E2E8F4;
+    --bg-primary:   #F9F9F9;
+    --bg-secondary: #F2F2F2;
     --bg-tertiary:  #B2BFD7;
     --bg-quaternary:#889BBF;
+
+    --border:       #E5E5E5;
 
     --text-primary:     #2C3854;
     --text-secondary:   #45587D;
     --text-tertiary:    #627AA7;
-    --text-muted:       #cad3e6;
+    --text-muted:       #B5B7C6;
     --text-white:       #FFFFFF;
 
 }
@@ -88,6 +90,8 @@
 .bg-tertiary    { background-color: var(--bg-tertiary)   !important; }
 .bg-quaternary  { background-color: var(--bg-quaternary) !important; }
 
+.text-brand     { color: var(--brand-600);      fill: var(--brand-600);         }
+.text-primary   { color: var(--text-primary);   fill: var(--text-primary);      }
 .text-primary   { color: var(--text-primary);   fill: var(--text-primary);      }
 .text-secondary { color: var(--text-secondary); fill: var(--text-secondary);    }
 .text-tertiary  { color: var(--text-tertiary);  fill: var(--text-tertiary);     }

@@ -15,33 +15,21 @@
     display:            flex;
     flex-direction:     column;
     align-items:        stretch;
-    width:              270px;
+    flex-wrap:          0;
     height:             100%;
-    padding-left:       var(--px14);
-    padding-right:      var(--px14);
-    background-color:   white;
-    border-right:       1px solid var(--bg-tertiary);
+    background-color:   var(--bg-primary);
 }
 
-.sidenav > .user-panel {
-    box-sizing:         border-box;
+.nav-brand {
     display:            flex;
-    justify-content:    space-between;
+    justify-content:    center;
     align-items:        center;
-    margin-top:         var(--px40);
-    padding:            var(--px8);
-    border:             1px solid var(--bg-secondary);
-    border-radius:      var(--px8);
-}
-
-.user-panel-description {
-    display:        flex;
-    flex-direction: column;
-    align-items:    stretch;
-    align-self:     center;
-    flex-wrap:      0;
-    text-align:     start;
-    margin-left:    var(--px10);
+    align-self:         center;
+    width:              42px;
+    height:             42px;
+    margin-top:         14px;
+    border-radius:      16px;
+    background-color:   var(--brand-300);
 }
 
 .sidenav > ul {
@@ -54,35 +42,38 @@
 }
 
 .nav-item {
-    padding-top:    var(--px16);
-    padding-bottom: var(--px16);
-    margin-bottom:  var(--px4);
-    border-radius:  var(--px8);
-    color:          var(--text-tertiary);
-    font-size:      var(--px14);
-    font-weight:    500;
-    cursor:         pointer;
+    padding-top:        var(--px24);
+    padding-bottom:     var(--px24);
+    border-left-style:  solid;
+    border-left-width:  4px;
+    border-left-color:  transparent;
+    color:              var(--text-muted);
+    font-size:          var(--px14);
+    font-weight:        500;
+    cursor:             pointer;
 }
 
-.nav-item:not(.active):hover {
-    transition:         background-color 50ms ease-in;
-    background-color:   var(--bg-light);
+.nav-item:not(.active):hover > .nav-item-icon {
+    color:  var(--brand-600);
+    fill:   var(--brand-600);
 }
 
 .nav-item-icon {
-    margin-left:    var(--px14);
-    margin-right:   var(--px18);
-    color:          var(--bg-quaternary);
-    fill:           var(--bg-quaternary);
+    margin-left:    28px;
+    margin-right:   32px;
+    color:          var(--text-muted);
+    fill:           var(--text-muted);
 }
 
 .nav-item.active {
-    background-color:   var(--brand-200);
     color:              var(--brand-600);
     font-weight:        600;
+    border-left-color:  var(--brand-600);
 }
 
 .nav-item.active > .nav-item-icon {
     color:  var(--brand-600);
     fill:   var(--brand-600);
 }
+
+

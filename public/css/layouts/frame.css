@@ -1,15 +1,21 @@
 
 
 
+.frame-header {
+    width:          100%;
+    padding-top:    var(--px14);
+    padding-bottom: var(--px14);
+}
+
+
+
 .main-container {
     position:           relative;
     display:            flex;
-    justify-content:    center;
+    flex-direction:     column;
+    align-items:        center;
     flex-grow:          1;
     height:             100%;
-    padding-left:       var(--px20);
-    padding-top:        var(--px40);
-    padding-right:      var(--px20);
     top:                0;
     bottom:             0;
 }
@@ -20,7 +26,9 @@
     display:            flex;
     flex-direction:     column;
     justify-content:    start;
+    width:              100%;
     align-items:        stretch;
+    padding-top:        var(--px20);
     padding-bottom:     var(--px40);
 }
 
@@ -50,17 +58,23 @@
 }
 
 
-
-@media screen and (max-width: 1099.98px) {
-    .main-content {
-        width: 100%;
+@media screen and (max-width: 594.98px) {
+    .main-container {
+        padding-left:   var(--px20);
+        padding-right:  var(--px20);
     }
 }
 
-@media screen and (min-width: 1100px) {
-    .main-content {
-        width:      850px;
-        min-width:  850px;
-        max-width:  850px;
+@media screen and (min-width: 595px) and (max-width: 944.98px) {
+    .main-container {
+        padding-left:   var(--px40);
+        padding-right:  var(--px40);
+    }
+}
+
+@media screen and (min-width: 945px) {
+    .main-container {
+        padding-left:   var(--px80);
+        padding-right:  var(--px80);
     }
 }

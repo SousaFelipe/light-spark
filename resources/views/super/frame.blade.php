@@ -12,14 +12,13 @@
         @include('includes.toast')
 
         <div class="main-container">
-            <main class="main-content">
+            <header class="frame-header">
+                <span class="text-primary fs-2 fw-5">@yield('frame-header')</span>
+            </header>
 
-                <div class="main-content-header">
-                    <div class="main-content-header-section">
-                        <span class="main-content-title"> @yield('main-content-title', '') </span>
-                        <span class="main-content-subtitle"> @yield('main-content-subtitle', '') </span>
-                    </div>
-                </div>
+            @yield('breadcrumb-content')
+
+            <main class="main-content">
 
                 @yield('main-content')
 

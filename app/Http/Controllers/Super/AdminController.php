@@ -22,7 +22,7 @@ class AdminController extends Controller
 
     public function provedores(Request $request)
     {
-        return view('super.admin.provedores');
+        return view('super.admin.provedores.index');
     }
 
 

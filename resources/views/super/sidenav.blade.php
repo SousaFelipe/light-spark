@@ -11,39 +11,26 @@
 
     <body class="text-center">
 
-        @include('includes.toast')
-
         <div class="flex-row bg-secondary w-100 h-100">
 
             <nav class="sidenav">
 
-                <div class="user-panel">
-                    <div class="flex-row align-center">
-                        <section class="img-sm-square bg-brand-4">
-                            <img class="img-sm-square" src="{{ Auth::user()->avatar() }}" alt="{{ Auth::user()->firstName() }}">
-                        </section>
-                        <div class="user-panel-description">
-                            <span class="text-primary fs-6 fw-7">{{ Auth::user()->firstAndLastName()  }}</span>
-                            <span class="text-secondary fs-7 fw-5">Administrador</span>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-close bg-danger-4 no-shadow" onclick="window.APP.form('formSignOut').submit()">
-                        <span class="icon-md icn-exit"></span>
-                    </button>
+                <div class="nav-brand">
+                    <span class="icon icon-md icn-light-on text-brand"></span>
                 </div>
 
                 <ul>
                     <li class="nav-item" data-nav-item="dashboard">
-                        <span class="nav-item-icon icon-md icn-dashboard"></span>Dashboard
+                        <span class="nav-item-icon icon-md icn-dashboard"></span>
                     </li>
                     <li class="nav-item" data-nav-item="provedores">
-                        <span class="nav-item-icon icon-md icn-earth"></span>Provedores
+                        <span class="nav-item-icon icon-md icn-account-multiple"></span>
                     </li>
                     <li class="nav-item" data-nav-item="tokens">
-                        <span class="nav-item-icon icon-md icn-keys"></span>Tokens
+                        <span class="nav-item-icon icon-md icn-keys"></span>
                     </li>
                     <li class="nav-item" data-nav-item="produtos">
-                        <span class="nav-item-icon icon-md icn-package-variant"></span>Produtos
+                        <span class="nav-item-icon icon-md icn-package-variant"></span>
                     </li>
                 </ul>
 
