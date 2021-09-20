@@ -18,8 +18,11 @@ class ProvedorRepository extends Repository
 
     public static function find($provedorID)
     {
-        $provedor = self::bind(Provedor::class)->where('id', $provedorID)->first();
-        return self::pullTokens(array($provedor));
+        $provedor = self::bind(Provedor::class)
+            ->where('id', $provedorID)
+            ->first();
+
+        return self::pullTokens(array($provedor))[0];
     }
 
 

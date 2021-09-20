@@ -16,12 +16,12 @@
                 <span class="text-primary fs-2 fw-5">@yield('frame-header')</span>
             </header>
 
-            @yield('breadcrumb-content')
+            <div class="breadcrumb-content">
+                @yield('breadcrumb-content')
+            </div>
 
             <main class="main-content">
-
                 @yield('main-content')
-
             </main>
         </div>
 

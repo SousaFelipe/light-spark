@@ -14,7 +14,7 @@ class ProvedoresController extends Controller
     {
         $provedor = ProvedorRepository::find($request->id);
 
-        return view('super.admin.provedores.detalhes', compact($provedor));
+        return view('super.admin.provedores.detalhes', compact('provedor'));
     }
 
 

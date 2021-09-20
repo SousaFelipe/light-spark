@@ -44,40 +44,6 @@
 
 
 
-.breadcrumb,
-.breadcrumb > ul {
-    display:        flex;
-    flex-direction: row;
-    align-self:     flex-start;
-    width:          fit-content;
-    margin-top:     var(--px10);
-}
-
-.breadcrumb > ul > li {
-    list-style-type:        '•';
-    list-style-position:    inside;
-    vertical-align:         middle;
-    margin-right:           8px;
-}
-
-.breadcrumb > ul > li:nth-child(1) {
-    list-style:     none;
-    display:        flex;
-    align-items:    center;
-}
-
-.breadcrumb > ul > li,
-.breadcrumb > ul > li > * {
-    margin-top:     auto;
-    margin-bottom:  auto;
-    padding-left:   0;
-    color:          var(--text-muted);
-    fill:           var(--text-muted);
-}
-
-
-
-
 .btn {
     display:            flex;
     justify-content:    center;
