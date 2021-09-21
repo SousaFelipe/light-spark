@@ -23,6 +23,12 @@
 
 
 
+@section('frame-actions')
+    <button type="button" class="btn btn-md btn-brand no-shadow" onclick="frame.externals('novo-cliente-modal').modal(true).show()"> Novo Cliente </button>
+@endsection
+
+
+
 @section('main-content')
 
     <div class="card">
@@ -33,7 +39,6 @@
             </div>
         </div>
         <div class="card-footer justify-end">
-            <button type="button" class="btn btn-md btn-dark no-shadow">Novo</button>
         </div>
     </div>
 

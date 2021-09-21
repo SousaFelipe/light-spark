@@ -5,6 +5,17 @@
     width:          100%;
     padding-top:    var(--px14);
     padding-bottom: var(--px14);
+    margin-bottom:  var(--px30);
+}
+
+
+
+
+.frame-top {
+    display:            flex;
+    justify-content:    space-between;
+    align-items:        center;
+    width:              100%;
 }
 
 
@@ -13,7 +24,7 @@
 
 .breadcrumb-content {
     display:        flex;
-    width:          100%;
+    width:          fit-content;
     flex-direction: column;
 }
 
@@ -23,14 +34,13 @@
     flex-direction: row;
     align-self:     flex-start;
     width:          fit-content;
-    margin-top:     var(--px10);
 }
 
 .breadcrumb > ul > li {
     list-style-type:        '•';
     list-style-position:    inside;
     vertical-align:         middle;
-    margin-right:           8px;
+    margin-right:           10px;
 }
 
 .breadcrumb > ul > li:nth-child(1) {

@@ -39,7 +39,22 @@
                 </div>
             </nav>
 
-            <iframe id="main" width="100%" height="100%"></iframe>
+            <iframe id="main" width="100%" height="100%">
+            </iframe>
+
+            <div id="novo-cliente-modal" class="modal-content">
+                <div class="modal modal-md">
+                    <header class="modal-header">
+                        <button type="button" class="btn-close end" data-modal-close="novo-cliente-modal">
+                            <span class="icon icon-md icn-close"></span>
+                        </button>
+                    </header>
+                    <div class="modal-body">
+                    </div>
+                    <footer class="modal-footer">
+                    </footer>
+                </div>
+            </div>
 
         </div>
 

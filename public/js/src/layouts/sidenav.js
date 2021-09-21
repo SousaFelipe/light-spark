@@ -2,6 +2,7 @@
 
 
 $(function () {
+
     new Sidenav($("*[data-nav-item]"))
         .loadActions()
         .selectDefault()

@@ -93,18 +93,3 @@ th {
     border-style:   solid;
     border-width:   0;
 }
-
-
-
-
-
-
-::marker {
-    margin-right:           0;
-    unicode-bidi:           isolate;
-    font-variant-numeric:   tabular-nums;
-    text-transform:         none;
-    text-indent:            0px !important;
-    text-align:             start !important;
-    text-align-last:        start !important;
-}

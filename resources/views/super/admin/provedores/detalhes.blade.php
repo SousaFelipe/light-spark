@@ -15,8 +15,11 @@
 @section('breadcrumb-content')
     <nav class="breadcrumb">
         <ul>
-            <li> <span class="icon icon-md icn-arrow-left"></span> </li>
-            <li> <span class="icon icon-md icn-account-multiple"></span> </li>
+            <li>
+                <a href="{{ route('super.admin.provedores.index') }}">
+                    <span class="icon icon-md icn-arrow-left text-brand"></span>
+                </a>
+            </li>
             <li> Todos </li>
             <li> Detalhes </li>
         </ul>

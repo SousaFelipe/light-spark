@@ -16,8 +16,13 @@
                 <span class="text-primary fs-2 fw-5">@yield('frame-header')</span>
             </header>
 
-            <div class="breadcrumb-content">
-                @yield('breadcrumb-content')
+            <div class="frame-top">
+                <div class="breadcrumb-content">
+                    @yield('breadcrumb-content')
+                </div>
+                <section class="frame-actions">
+                    @yield('frame-actions')
+                </section>
             </div>
 
             <main class="main-content">
@@ -28,6 +33,8 @@
         @include('includes.scripts')
 
         <script src="{{ asset('js/src/components/Request.js') }}"></script>
+        <script src="{{ asset('js/src/components/Modal.js') }}"></script>
+        <script src="{{ asset('js/src/layouts/frame.js') }}"></script>
 
         @yield('page-scripts')
 

@@ -31,8 +31,8 @@ Route::prefix('/super')->name('super.')->group(function () {
 
 
         Route::prefix('/provedores')->name('provedores.')->group(function () {
-            Route::get('/', [AdminController::class, 'provedores']);
-            Route::get('/detalhes/{id}', [ProvedoresController::class, 'detalhes']);
+            Route::get('/', [AdminController::class, 'provedores'])->name('index');
+            Route::get('/detalhes/{id}', [ProvedoresController::class, 'detalhes'])->name('detalhes');
 
             Route::get('/listar', [ProvedoresController::class, 'listar']);
             Route::get('/buscar/{id}', [ProvedoresController::class, 'buscar']);
