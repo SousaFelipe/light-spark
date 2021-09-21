@@ -70,11 +70,13 @@
 .btn {
     display:            flex;
     justify-content:    center;
+    width:              fit-content;
     border:             none;
     cursor:             pointer;
     font-weight:        600;
     text-align:         center;
     font-size:          var(--px12);
+    white-space:        nowrap;
     -webkit-transition: background 1s ease-out;
     -moz-transition:    background 1s ease-out;
     -o-transition:      background 1s ease-out;
@@ -103,6 +105,7 @@
 }
 
 .btn-lg {
+    min-width:      112px;
     padding-top:    var(--px24);
     padding-bottom: var(--px24);
     border-radius:  var(--px10);
@@ -387,23 +390,30 @@ span[class*="icon-"] {
     padding:    0;
 }
 
-.img-sm-square {
-    width:          48px;
-    height:         48px;
-    border-radius:  var(--px14);
+.img-sm {
+    width:  48px;
+    height: 48px;
 }
 
-.img-md-square {
-    width:          56px;
-    height:         56px;
-    border-radius:  56px
+.img-md {
+    width:  56px;
+    height: 56px;
 }
 
-.img-lg-square {
-    width:          74px;
-    height:         74px;
-    border-radius:  var(--px24);
+.img-lg {
+    width:  74px;
+    height: 74px;
 }
+
+.img-xl {
+    width:  96px;
+    height: 96px;
+}
+
+.img-sm.square { border-radius:  var(--px14); }
+.img-md.square { border-radius:  var(--px18); }
+.img-lg.square { border-radius:  var(--px24); }
+.img-xl.square { border-radius:  var(--px30); }
 
 
 

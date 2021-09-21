@@ -47,9 +47,10 @@ class User extends AuthenticatableUser
 
 
 
-    public function avatar($asObject = false)
+    public function avatar($asObject = false, $asDefault = true)
     {
-        $path = 'images/avatars/';
+        $level = $asDefault ? 'users' : 'providers';
+        $path = 'images/avatars/' . $level . '/';
         $file = 'default.png';
 
         $alloweds = Config::get('filesystems.alloweds');

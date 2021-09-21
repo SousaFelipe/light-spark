@@ -11,16 +11,19 @@ class Modal {
             : document.getElementById(id)
 
         this.modal = this.element.childNodes[1]
-        this.btnClose = $(`button[data-modal-close="${ id }"]`)
+        this.modalHeader = this.modal.childNodes[1]
 
-        this.bindAction()
+        if (this.modalHeader) {
+            this.bindAction()
+        }
     }
 
 
     bindAction () {
         const self = this
+        const btnClose = this.modalHeader.childNodes[1]
 
-        this.btnClose.on('click', function(e) {
+        $(btnClose).on('click', function(e) {
             self.close()
         })
     }
@@ -36,13 +39,22 @@ class Modal {
                 $(this).css('display', 'flex')
             })
         })
+
         return this
     }
 
 
     close () {
+        const modal = this.modal
+
         $(this.element).fadeOut('fast', function() {
             $(this).css('display', 'none')
+
+            $(modal).fadeOut('fast', function () {
+                $(this).css('display', 'none')
+            })
         })
+
+        return this
     }
 }
