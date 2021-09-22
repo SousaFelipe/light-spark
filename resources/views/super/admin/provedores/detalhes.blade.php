@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li> <a href="{{ route('super.admin.provedores.index') }}">Todos</a> </li>
-            <li> Detalhes </li>
+            <li> {{ explode(' ', $provedor['nome_fantasia'])[0] }} </li>
         </ul>
     </nav>
 @endsection
@@ -61,5 +61,6 @@
 @section('page-scripts')
     <script src="{{ asset('js/src/components/Table.js') }}"></script>
     <script src="{{ asset('js/src/components/Token.js') }}"></script>
+    <script src="{{ asset('js/src/components/Question.js') }}"></script>
     <script src="{{ asset('js/src/pages/provedores/detalhes.js') }}"></script>
 @endsection

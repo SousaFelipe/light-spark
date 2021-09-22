@@ -6,7 +6,7 @@ $(function () {
 
     const table = new Table('tokens', {
         headers: ['STATUS', 'TOKEN', 'action'],
-        columns: [ 5, 15, 2 ]
+        columns: [ 4, 16, 2 ]
     })
 
     new Request(window.APP.url('super/admin').web(`tokens/listar/${ id }`))
@@ -35,12 +35,9 @@ $(function () {
 
 
 function questionaTokenAcao(tokenID) {
-    new Question('token-acao')
-        .mensage('Deseja realmente ativar esse Token?')
-        .question('Ao ativar, os usuários associados a ele terão acesso ao sistema imediatamente!')
-        .onConfirm(() => {
-
-
-
-        })
+    new Question('question-spark-md', true)
+        .type('confirm')
+        .question('Deseja realmente ativar esse Token?')
+        .explain('Ao ativar, os usuários associados a ele terão acesso ao sistema imediatamente!')
+        .show()
 }

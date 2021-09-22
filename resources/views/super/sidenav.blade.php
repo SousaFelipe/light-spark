@@ -42,10 +42,10 @@
             <iframe id="main" width="100%" height="100%">
             </iframe>
 
-            <div id="novo-cliente-modal" class="modal-content">
+            <div id="spark-md-modal" class="modal-content">
                 <div class="modal modal-md">
                     <header class="modal-header">
-                        <button type="button" class="btn-close end" data-modal-close="novo-cliente-modal">
+                        <button type="button" class="btn-close end" data-modal-close="spark-md-modal">
                             <span class="icon icon-md icn-close"></span>
                         </button>
                     </header>
@@ -54,6 +54,22 @@
                     <footer class="modal-footer">
                     </footer>
                 </div>
+            </div>
+
+            <div id="question-spark-md" class="question-content">
+                <!---->
+                <div id="question-spark-md-modal" class="question">
+                    <div class="question-body">
+                        <div id="question-spark-md-img" class="mt-2 mb-2"></div>
+                        <span id="question-spark-md-question" class="text-primary text-center fs-3 fw-2"></span>
+                        <span id="question-spark-md-explain" class="text-tertiary text-center fs-5 mt-1"></span>
+                    </div>
+                    <div class="question-footer">
+                        <button id="question-spark-md-cancel" type="button" class="btn btn-md btn-default no-shadow">Cancelar</button>
+                        <button id="question-spark-md-confirm" type="button" class="btn btn-md">Confirmar</button>
+                    </div>
+                </div>
+                <!---->
             </div>
 
         </div>

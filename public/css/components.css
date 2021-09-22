@@ -112,24 +112,35 @@
     line-height:    var(--px24);
 }
 
-.btn-brand {
-    background: var(--brand-400);
-    color:      var(--text-white);
+.btn-default {
+    background-color:   white;
+    border:             1px solid var(--border);
+    color:              var(--text-secondary);
 }
 
-.btn-brand:active,
-.btn-brand:focus {
-    box-shadow:     0px 0px 0px 3px var(--brand-200);
+.btn-brand {
+    background-color:   var(--brand-400);
+    color:              white;
 }
 
 .btn-accent {
-    background: var(--accent-400);
-    color:      var(--text-white);
+    background-color:   var(--accent-400);
+    color:              white;
 }
 
-.btn-accent:active,
-.btn-accent:focus {
-    box-shadow:     0px 0px 0px 3px var(--accent-200);
+.btn-info {
+    background-color:   var(--info-400);
+    color:              white;
+}
+
+.btn-warning {
+    background-color:   var(--warning-400);
+    color:              var(--text-primary);
+}
+
+.btn-danger {
+    background-color:   var(--danger-400);
+    color:              white;
 }
 
 .btn-light {
@@ -141,6 +152,37 @@
     background: linear-gradient(to right bottom, var(--text-secondary) 10%, var(--text-primary));
     color:      var(--text-white);
 }
+
+
+.btn-default:active {
+    border: 1px solid var(--bg-light);
+}
+
+.btn-brand:active,
+.btn-brand:focus {
+    box-shadow:     0px 0px 0px 3px var(--brand-200);
+}
+
+.btn-accent:active,
+.btn-accent:focus {
+    box-shadow:     0px 0px 0px 3px var(--accent-200);
+}
+
+.btn-info:active,
+.btn-info:focus {
+    box-shadow:     0px 0px 0px 3px var(--info-200);
+}
+
+.btn-warning:active,
+.btn-warning:focus {
+    box-shadow:     0px 0px 0px 3px var(--warning-200);
+}
+
+.btn-danger:active,
+.btn-danger:focus {
+    box-shadow:     0px 0px 0px 3px var(--danger-200);
+}
+
 
 .btn-brand:disabled {
     background: var(--brand-300);
@@ -489,51 +531,58 @@ span[class*="icon-"] {
 
 
 
-.super {
+.question-content {
     position:           absolute;
     display:            none;
     justify-content:    center;
-    align-items:        stretch;
-    top:                0px;
-    bottom:             0px;
-    right:              0px;
-    left:               0px;
+    align-items:        center;
     width:              100%;
     height:             100%;
-    background-color:   rgba(0, 0, 0, 0.25);
+    background-color:   rgba(0, 0, 0, 0.4);
 }
 
-.super-header {
-    display:            flex;
-    justify-content:    space-between;
-    margin-bottom:      var(--px20);
-    padding-left:       var(--px10);
+.question {
+    display:            none;
+    flex-direction:     column;
+    justify-content:    stretch;
+    align-items:        stretch;
+    width:              500px;
+    border-radius:      var(--px8);
+    background-color:   white;
+    border:             1px solid var(--border);
+    overflow:           hidden;
 }
 
-.super-content {
+.question-header {
     display:            flex;
     flex-direction:     column;
-    align-items:        stretch;
-    padding-top:        var(--px40);
-    padding-bottom:     var(--px40);
+    justify-content:    start;
+    align-items:        flex-start;
+    padding-left:       var(--px20);
+    padding-top:        var(--px10);
+    padding-right:      var(--px10);
 }
 
-.super-header-section {
+.question-body {
     display:        flex;
     flex-direction: column;
-    text-align:     start;
+    align-items:    center;
+    padding-left:   var(--px20);
+    padding-right:  var(--px20);
+    padding-bottom: var(--px20);
 }
 
-.super-title {
-    font-size:      var(--px30);
-    font-weight:    600;
-    color:          var(--text-primary);
+.question-footer {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+    padding-top:        var(--px10);
+    padding-bottom:     var(--px10);
+    border-top:         1px dashed var(--border);
 }
 
-.super-subtitle {
-    font-size:      var(--px20);
-    font-weight:    400;
-    color:          var(--text-tertiary);
+.question-footer > button:first-child {
+    margin-right: var(--px8);
 }
 
 

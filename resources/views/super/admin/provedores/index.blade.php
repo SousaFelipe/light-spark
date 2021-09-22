@@ -24,7 +24,7 @@
 
 
 @section('frame-actions')
-    <button type="button" class="btn btn-md btn-brand no-shadow" onclick="frame.externals('novo-cliente-modal').modal(true).show()"> Novo Cliente </button>
+    <button type="button" class="btn btn-md btn-brand no-shadow" onclick="frame.externals('spark-md-modal').modal(true).show()"> Novo Cliente </button>
 @endsection
 
 
