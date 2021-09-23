@@ -20,10 +20,10 @@ class Question {
         }
 
         this.images = {
-            'confirm':  () => 'help',
-            'info':     () => 'info',
-            'warning':  () => 'error',
-            'danger':   () => 'delete-sign'
+            'confirm':  () => 'help-64',
+            'info':     () => 'info-64',
+            'warning':  () => 'error-64',
+            'danger':   () => 'cancel-64'
         }
     }
 
@@ -99,7 +99,7 @@ class Question {
         let currentTypeImage = (this.images[type] || this.images['info'])()
 
         this.document.getElementById(`${ this.id }-confirm`).classList.add(`btn-${ currentTypeButton }`)
-        this.document.getElementById(`${ this.id }-img`).innerHTML = (`<img src="https://img.icons8.com/cute-clipart/64/000000/${ currentTypeImage }.png"/>`)
+        this.document.getElementById(`${ this.id }-img`).innerHTML = (`<img src="${ window.APP.assets(currentTypeImage).icon() }"/>`)
 
         return this
     }

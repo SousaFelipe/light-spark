@@ -56,6 +56,14 @@ $(function () {
                 }
             },
 
+            assets: (filename) => {
+                let iconsURL = `${ config.webUri }/images/icons`
+
+                return {
+                    icon: (filetype = 'png') => (`${ iconsURL }/${ filename }.${ filetype }`)
+                }
+            },
+
             mask: (clean) => {
                 return {
                     cell: () => {
