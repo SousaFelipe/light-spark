@@ -1,7 +1,7 @@
 
 
 
-$(function () {
+/*$(function () {
 
     const table = new Table('provedores', {
         headers: ['CNPJ', 'RAZÃO', 'ENDEREÇO', 'action'],
@@ -29,4 +29,70 @@ $(function () {
             icons.render()
         })
 
+})*/
+
+
+
+const provedores = [
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+    { cnpj: '23866988000171', razao: 'Upnet Tecnologia e Informacao Eireli', logradouro: 'Rua Conego Aureliano Mota, 96' },
+]
+
+
+
+$(function () {
+
+    $.extend($.fn.dataTable.defaults, {
+        "autoWidth":    false,
+        "searching":    false,
+        "ordering":     false,
+        "info":         false,
+        "lengthChange": false,
+        pageLength:     8,
+        language: {
+            oPaginate: {
+                sNext: '<span class="icon icon-md icn-chevron-right"></span>',
+                sPrevious: '<span class="icon icon-md icn-chevron-left"></span>',
+            }
+        }
+    })
+
+    new Request(window.APP.url('super/admin').web('provedores/listar'))
+        .get(async response => {
+
+            let table = $('#provedores').DataTable({
+                data: provedores,
+                columns: [
+                    { data: 'cnpj' },
+                    { data: 'razao' },
+                    { data: 'logradouro' }
+                ],
+                columnDefs: [
+                    {
+                        targets: 0, className: 'text-start',
+                    }
+                ]
+            })
+
+            icons.render()
+        })
 })

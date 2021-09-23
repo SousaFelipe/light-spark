@@ -32,13 +32,18 @@
 @section('main-content')
 
     <div class="card">
-        <div class="card-body">
-            <div id="provedores" class="table ps-2 pe-2">
-                <div class="table-header"></div>
-                <div class="table-body"></div>
-            </div>
-        </div>
-        <div class="card-footer justify-end">
+        <div class="card-body ms-2 me-2">
+            <table id="provedores">
+                <thead>
+                    <tr>
+                        <th>CNPJ</th>
+                        <th>RAZÃO</th>
+                        <th>ENDEREÇO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div>
 

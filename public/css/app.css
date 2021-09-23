@@ -1,5 +1,6 @@
-@import url('../vendor/bootstrap/css/bootstrap-grid.min.css');
 @import url('./globals.css');
+@import url('../vendor/bootstrap/css/bootstrap-grid.min.css');
+@import url('../vendor/datatables/dataTables.min.css');
 @import url('./dimensions.css');
 @import url('./components.css');
 
